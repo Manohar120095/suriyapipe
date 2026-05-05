@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Surya Polymers - PVC Pipe Manufacturer & Dealer</title>
+    <meta name="description"
+        content="Sri Surya Polymers is a trusted manufacturer and dealer of agricultural and electrical PVC pipes, fittings, and barrels in Madurai.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- jsPDF for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("LN20ZK4Ynrz-olrcR");
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress js-scroll-progress"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader-wrapper js-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header js-header">
+        <div class="container nav-container">
+            <div class="header-left">
+                <a href="#" class="logo">
+                    <span class="logo-text" data-i18n="logo_text">SRI SURIYA PIPES</span>
+                    <span class="logo-subtext" data-i18n="logo_subtext">Kappalur, Madurai</span>
+                </a>
+            </div>
+            <nav class="nav-menu js-nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active" data-i18n="nav_home">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav_about">About Us</a></li>
+                    <li class="nav-item"><a href="#products" class="nav-link" data-i18n="nav_products">Products</a></li>
+                    <li class="nav-item"><a href="#applications" class="nav-link"
+                            data-i18n="nav_applications">Applications</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link" data-i18n="nav_gallery">Gallery</a></li>
+                    <li class="nav-item">
+                        <button class="lang-switch-btn js-lang-btn" id="langSwitch">
+                            <span class="lang-code">Tamil/English</span>
+                        </button>
+                    </li>
+                    <li class="nav-item"><a href="#contact" class="nav-link btn-primary nav-btn"
+                            data-i18n="nav_order">Order</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger js-hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="hero-bg js-hero-bg">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="images/pipe_pj.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="container hero-container pt-xxl">
+            <div class="hero-content reveal-up">
+                <div class="hero-text-area">
+                    <h1 class="hero-title" data-i18n="hero_title">PVC Pipes for <br><span class="text-gradient">Agriculture & Borewell and Electricals</span></h1>
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">Tamil Nadu's most trusted manufacturer and dealer. Delivering durability, precision, and reliable water distribution systems for every need.</p>
+                </div>
+                
+                <div class="hero-action-area">
+                    <div class="hero-contact-callout glass shimmer reveal-up-delay">
+                        <span class="callout-label" data-i18n="hero_title2">Contact Us for Orders</span>
+                        <a href="tel:+919994166671" class="callout-number">+91 99941 66671</a>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary pulse-anim" data-i18n="btn_explore">Available Products</a>
+                        <a href="#contact" class="btn btn-outline" data-i18n="btn_quote">Place a Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-cards-wrapper reveal-up stagger-1">
+                <div class="feature-card glass-card shimmer">
+                    <i class="fa-solid fa-droplet card-icon"></i>
+                    <h3 data-i18n="feat_durable_title">Durable Pipes</h3>
+                    <p data-i18n="feat_durable_desc">Leak-proof and weather resistant and also with high flexiblity.</p>
+                </div>
+                <div class="feature-card glass-card stagger-2 shimmer">
+                    <i class="fa-solid fa-ruler-combined card-icon"></i>
+                    <h3 data-i18n="feat_sizes_title">Multiple Sizes</h3>
+                    <p data-i18n="feat_sizes_desc">From 1/2 inch up to 12 inches.</p>
+                </div>
+                <div class="feature-card glass-card stagger-3 shimmer">
+                    <i class="fa-solid fa-leaf card-icon"></i>
+                    <h3 data-i18n="feat_agri_title">Applicable</h3>
+                    <p data-i18n="feat_agri_desc">Perfect for irrigation fields and High pressure water fields.</p>
+                </div>
+                <div class="feature-card glass-card stagger-4 shimmer">
+                    <i class="fa-solid fa-industry card-icon"></i>
+                    <h3 data-i18n="feat_reliable_title">Shipping</h3>
+                    <p data-i18n="feat_reliable_desc">Can able to deliver pipe all over Tamil Nadu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container stats-container">
+            <div class="stats-grid">
+                <div class="stat-item reveal-up stagger-1">
+                    <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div class="stat-number"><span class="js-counter" data-target="2000">0</span></div>
+                    <div class="stat-label" data-i18n="stat_est">Established Year</div>
+                </div>
+                <div class="stat-item reveal-up stagger-2">
+                    <div class="stat-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <div class="stat-number"><span class="js-counter" data-target="36">0</span>+</div>
+                    <div class="stat-label" data-i18n="stat_prod">Core PVC Products</div>
+                </div>
+                <div class="stat-item reveal-up stagger-3">
+                    <div class="stat-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <div class="stat-number"><span class="js-counter" data-target="150000">0</span>+</div>
+                    <div class="stat-label" data-i18n="stat_clients">Happy Clients</div>
+                </div>
+                <div class="stat-item reveal-up stagger-4">
+                    <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label" data-i18n="stat_quality">Quality Assured</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container about-container grid-2-col">
+            <div class="about-image-wrapper reveal-left">
+                <div class="about-bg-image grid-image"></div>
+                <!-- Will use factory bg here -->
+                <div class="experience-badge pulse-anim">
+                    <span class="yr">Top Quality</span>
+                    <span class="txt">Manufacturing</span>
+                </div>
+            </div>
+            <div class="about-content reveal-right">
+                <h2 class="section-title" data-i18n="about_title">Established since <span
+                        class="text-gradient">2010</span></h2>
+                <div class="title-underline"></div>
+                <p class="about-text" data-i18n="about_p1">Located in the Sidco Industrial Estate at Kappalur,
+                    Madurai,Sri Suriya Polymers is a leading (Sole Proprietorship) firm managed by Sudhakar_K. We are
+                    dedicated to producing high-quality PVC solutions for agricultural,industrial, and construction
+                    needs Even more products are products.</p>
+                <p class="about-text" data-i18n="about_p2"> Our state-of-the-art infrastructure is spread across a vast
+                    area, divided into specialized departments: Manufacturing, Quality Testing, Packing, R&D, and
+                    Logistics . The organized structure ensures that every product, from high quality pvc pipes for
+                    Agriculture, Borewell, Electricals , constructions even more.. with more solutions, meets the
+                    highest industry standards.</p>
+                <ul class="about-list">
+                    <li data-i18n="about_l1"><i class="fa-solid fa-check-circle"></i> ISO Certified Manufacturing</li>
+                    <li data-i18n="about_l2"><i class="fa-solid fa-check-circle"></i> Advanced Quality Testing Lab</li>
+                    <li data-i18n="about_l3"><i class="fa-solid fa-check-circle"></i> Modern R&D Department</li>
+                    <li data-i18n="about_l4"><i class="fa-solid fa-check-circle"></i> Wide Distribution Network</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary mt-sm" data-i18n="btn_contact">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products section bg-light">
+        <div class="container">
+            <h2 class="section-title reveal-up" data-i18n="prod_title">Our <span class="text-gradient">Products</span>
+            </h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle reveal-up delay-1" data-i18n="prod_subtitle">Comprehensive PVC solutions for
+                every requirement.</p>
+
+            <div class="product-grid mt-lg">
+                <!-- Product 1 -->
+                <div class="product-card reveal-up">
+                    <div class="product-img-wrapper">
+                        <img src="images/colored_pipes.png" alt="High Pressure PVC Pipes"
+                            class="product-img js-img-agri">
+                    </div>
+                    <div class="product-info">
+                        <h3 data-i18n="prod1_title">High Pressure & Agri Pipes</h3>
+                        <p data-i18n="prod1_desc">Specialized PVC pipes for high-pressure irrigation and agricultural
+                            water supply. Available
+                            in Blue, White, and Grey.</p>
+                        <div class="product-btns">
+                            <a href="#contact" class="btn btn-primary btn-sm" data-i18n="btn_enquire">Order</a>
+                            <a href="#contact" class="btn btn-outline btn-sm" data-i18n="btn_order">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card reveal-up stagger-2">
+                    <div class="product-img-wrapper">
+                        <img src="images/electrical_pipes.png" alt="Electric PVC Pipes" class="product-img js-img-elec"
+                            loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 data-i18n="prod2_title">Electric & Wiring Pipes</h3>
+                        <p data-i18n="prod2_desc">Fire-retardant electrical conduit pipes for safe wiring in commercial
+                            and residential
+                            buildings.</p>
+                        <div class="product-btns">
+                            <a href="#contact" class="btn btn-primary btn-sm" data-i18n="btn_enquire">Order</a>
+                            <a href="#contact" class="btn btn-outline btn-sm" data-i18n="btn_order">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card reveal-up stagger-3">
+                    <div class="product-img-wrapper">
+                        <img src="images/pipe_fittings.png" alt="Construction & UPVC Pipes"
+                            class="product-img js-img-fit" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 data-i18n="prod3_title">Pvc Fittings</h3>
+                        <p data-i18n="prod3_desc">High-quality construction PVC Fittings for plumbing and Costruction
+                            and structural applications.</p>
+                        <div class="product-btns">
+                            <a href="#contact" class="btn btn-primary btn-sm" data-i18n="btn_enquire">Order</a>
+                            <a href="#contact" class="btn btn-outline btn-sm" data-i18n="btn_order">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card reveal-up stagger-4">
+                    <div class="product-img-wrapper">
+                        <img src="images/plastic_barrels.png" alt="Plastic Barrels & Powder"
+                            class="product-img js-img-barrel" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 data-i18n="prod4_title">Water Tanks</h3>
+                        <p data-i18n="prod4_desc">We supply water tanks with high quality and durable and also with
+                            various sizes and colors.
+                        </p>
+                        <div class="product-btns">
+                            <a href="#contact" class="btn btn-primary btn-sm" data-i18n="btn_enquire">Order</a>
+                            <a href="#contact" class="btn btn-outline btn-sm" data-i18n="btn_order">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pipe Size Chart Section -->
+    <section class="size-chart section">
+        <div class="container">
+            <h2 class="section-title reveal-up" data-i18n="size_title">PVC Pipe <span
+                    class="text-gradient">Size Chart</span></h2>
+            <div class="title-underline"></div>
+
+            <div class="table-responsive reveal-up mt-md">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="th_cat">Category</th>
+                            <th data-i18n="th_sizes">Sizes (Inches)</th>
+                            <th data-i18n="th_colors">Colors</th>
+                            <th data-i18n="th_apps">Applications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Plumbing Group -->
+                        <tr class="table-group-header">
+                            <td colspan="4" style="background: var(--bg-soft); font-weight: 700; color: var(--primary);"
+                                data-i18n="grp_plumbing">Plumbing &
+                                Domestic Waterline</td>
+                        </tr>
+                        <tr>
+                            <td>Standard Plumbing</td>
+                            <td>1/2", 3/4", 1", 1.5", 2"</td>
+                            <td>White, Light Blue</td>
+                            <td>Home water supply, Sinks & Bathrooms</td>
+                        </tr>
+
+                        <!-- Electrical Group -->
+                        <tr class="table-group-header">
+                            <td colspan="4" style="background: var(--bg-soft); font-weight: 700; color: var(--primary);"
+                                data-i18n="grp_elec">Electrical
+                                & Conduit Systems</td>
+                        </tr>
+                        <tr>
+                            <td>Wiring Conduit (FR)</td>
+                            <td>1/2", 3/4", 1", 1.5"</td>
+                            <td>Grey, Ivory</td>
+                            <td>Fire-retardant concealed and surface wiring</td>
+                        </tr>
+
+                        <!-- Agri Group -->
+                        <tr class="table-group-header">
+                            <td colspan="4" style="background: var(--bg-soft); font-weight: 700; color: var(--primary);"
+                                data-i18n="grp_agri">Agriculture
+                                & High Pressure</td>
+                        </tr>
+                        <tr>
+                            <td>Agri Irrigation</td>
+                            <td>2", 2.5", 3", 4", 6"</td>
+                            <td>Royal Blue</td>
+                            <td>Farm water supply, Submersible pumps</td>
+                        </tr>
+                        <tr>
+                            <td>High Pressure (PN10)</td>
+                            <td>3" to 8"</td>
+                            <td>Blue, White</td>
+                            <td>Industrial pressure lines, Borewell casing</td>
+                        </tr>
+                        <!-- Borewell Group -->
+                        <tr class="table-group-header">
+                            <td colspan="4" style="background: var(--bg-soft); font-weight: 700; color: var(--primary);"
+                                data-i18n="grp_borewell">Borewell uses</td>
+                        </tr>
+                        <tr>
+                            <td>Borewell</td>
+                            <td>5", 7", 8", 10"</td>
+                            <td>White, Gray, Blue</td>
+                            <td>Farm water supply, Home water supply and many more uses </td>
+                        </tr>
+                        <!-- Industrial Group -->
+                        <tr class="table-group-header">
+                            <td colspan="4" style="background: var(--bg-soft); font-weight: 700; color: var(--primary);"
+                                data-i18n="grp_ind">Large
+                                Industrial & Specialty</td>
+                        </tr>
+                        <tr>
+                            <td>Structured Wall</td>
+                            <td>8" to 12" +</td>
+                            <td>Dark Grey</td>
+                            <td>Main drainage, Heavy construction, City lines</td>
+                        </tr>
+                        <tr>
+                            <td>Industrial Storage</td>
+                            <td>Custom Barrels</td>
+                            <td>Blue, Blue/Black</td>
+                            <td>Industrial chemical & water storage</td>
+                        </tr>
+                        <tr>
+                            <td>Raw Material</td>
+                            <td>Scraps & Powder</td>
+                            <td>Multicolor / White</td>
+                            <td>Industrial raw material wholesale</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="applications section bg-dark text-white">
+        <div class="container">
+            <h2 class="section-title reveal-up" data-i18n="app_title">Key <span
+                    class="text-gradient">Applications</span></h2>
+            <div class="title-underline"></div>
+
+            <div class="app-icons-grid mt-lg">
+                <div class="app-item reveal-up">
+                    <div class="app-icon-wrapper"><i class="fa-solid fa-wheat-awn app-icon"></i></div>
+                    <h4 data-i18n="app1">Agricultural Irrigation</h4>
+                </div>
+                <div class="app-item reveal-up delay-1">
+                    <div class="app-icon-wrapper"><i class="fa-solid fa-faucet-drip app-icon"></i></div>
+                    <h4 data-i18n="app2">Borewell Water Supply</h4>
+                </div>
+                <div class="app-item reveal-up delay-2">
+                    <div class="app-icon-wrapper"><i class="fa-solid fa-tractor app-icon"></i></div>
+                    <h4 data-i18n="app3">Farm Water Distribution</h4>
+                </div>
+                <div class="app-item reveal-up delay-3">
+                    <div class="app-icon-wrapper"><i class="fa-solid fa-building app-icon"></i></div>
+                    <h4 data-i18n="app4">Construction & Plumbing Pipes</h4>
+                </div>
+                <div class="app-item reveal-up delay-4">
+                    <div class="app-icon-wrapper"><i class="fa-solid fa-bolt app-icon"></i></div>
+                    <h4 data-i18n="app5">Electrical pipes</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+        <div class="container">
+            <h2 class="section-title reveal-up" data-i18n="gal_title">Product <span class="text-gradient">Gallery</span>
+            </h2>
+            <div class="title-underline"></div>
+
+            <div class="gallery-grid mt-lg">
+                <div class="gallery-item reveal-up js-gallery-img" data-src="images/hero_bg.png">
+                    <img src="images/hero_bg.png" alt="Agriculture">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up delay-1 js-gallery-img" data-src="images/colored_pipes.png">
+                    <img src="images/colored_pipes.png" alt="Pipes">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up delay-2 js-gallery-img" data-src="images/farm_irrigation.png">
+                    <img src="images/farm_irrigation.png" alt="Farm">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up delay-3 js-gallery-img" data-src="images/factory_bg.png">
+                    <img src="images/factory_bg.png" alt="Factory">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up js-gallery-img" data-src="images/pipe_fittings.png">
+                    <img src="images/pipe_fittings.png" alt="Fittings">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item reveal-up delay-1 js-gallery-img" data-src="images/plastic_barrels.png">
+                    <img src="images/plastic_barrels.png" alt="Barrels">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox js-lightbox">
+        <span class="lightbox-close js-lightbox-close">&times;</span>
+        <img class="lightbox-content js-lightbox-img" src="">
+    </div>
+
+    <!-- Contact & Enquiry Section -->
+    <section id="contact" class="contact section bg-light">
+        <div class="container grid-2-col">
+            <div class="contact-info reveal-left">
+                <h2 class="section-title" data-i18n="contact_title">Get in <span class="text-gradient">Touch</span></h2>
+                <div class="title-underline"></div>
+
+                <div class="contact-card">
+                    <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="c-details">
+                        <h4 data-i18n="addr_title">Address</h4>
+                        <p data-i18n="addr_p">Sri Suriya Polymers<br>D-42, SIDCO Industrial Estate <br> Near SBI bank
+                            <br>Kappalur,Madurai-625008<br>Tamil Nadu</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="c-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="c-details">
+                        <h4 data-i18n="prop_title">Proprietor</h4>
+                        <p data-i18n="prop_p">K. Sudhakar<br>(Owner)</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="c-details">
+                        <h4 data-i18n="phone_title">Phone</h4>
+                        <p>+91 99941 66671<br>+91 97871 66671 <br>0452 2489895 (Office)</p>
+                    </div>
+                </div>
+
+                <div class="map-wrapper mt-md">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6140.017555888764!2d78.01582189968607!3d9.857243990097867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00d1c5dd778e2f%3A0x53b60ec1924326e9!2sSri%20Surya%20Polymers%2FPVC%20Pipe%20Dealer%2FAgricultural%2FElectrical%2FPVC%20Pipe%20Manufacture%20in%20Madurai!5e0!3m2!1sen!2sin!4v1773320190830!5m2!1sen!2sin"
+                        width="100%" height="250"
+                        style="border:0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+
+            </div>
+
+            <div class="enquiry-form-wrapper reveal-right">
+                <div class="form-card">
+                    <h3 data-i18n="form_title">Order / Enquiry Form</h3>
+                    <p data-i18n="form_subtitle">Fill out the details below. We accept **Cash, Cheque, DD, and Online
+                        Bank Transfers.</p>
+                    <form id="enquiryForm" class="enquiry-form js-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="lbl_name">Customer Name *</label>
+                                <input type="text" name="name" required class="form-input" placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="lbl_phone">Phone Number *</label>
+                                <input type="tel" name="phone" required class="form-input"
+                                    placeholder="+91 00000 00000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="lbl_email">Email Address</label>
+                            <input type="email" name="email" class="form-input" placeholder="john@example.com">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="lbl_prod">Product Type *</label>
+                                <select name="product_type" required class="form-input">
+                                    <option value="" data-i18n="opt_select_prod">Select Product...</option>
+                                    <option value="HighPressure">High Pressure PVC Pipes</option>
+                                    <option value="Agri_Pipes">Agricultural PVC Pipes</option>
+                                    <option value="Electric_Pipes">Electric Wiring Pipes</option>
+                                    <option value="Construction">Construction PVC Pipes</option>
+                                    <option value="UPVC">UPVC Pipes</option>
+                                    <option value="Powder">PVC Pipe Powder</option>
+                                    <option value="Barrels">Plastic Barrels</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="lbl_size">Pipe Size</label>
+                                <select name="pipe_size" class="form-input">
+                                    <option value="" data-i18n="opt_select_size">Select Size...</option>
+                                    <option value="1/2">1/2 inch</option>
+                                    <option value="3/4">3/4 inch</option>
+                                    <option value="1">1 inch</option>
+                                    <option value="1_1/2">1 1/2 inch</option>
+                                    <option value="2_1/2">2 1/2 inch</option>
+                                    <option value="3">3 inch</option>
+                                    <option value="4">4 inch</option>
+                                    <option value="5">5 inch</option>
+                                    <option value="6">6 inch</option>
+                                    <option value="7">7 inch</option>
+                                    <option value="8">8 inch</option>
+                                    <option value="9">9 inch</option>
+                                    <option value="10">10 inch</option>
+                                    <option value="11">11 inch</option>
+                                    <option value="12">12 inch</option>
+                                    <option value="Barrel">Barrel</option>
+                                    <option value="Scraps">Scraps</option>
+                                    <option value="Other">Other..</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="lbl_color">Pipe Color</label>
+                                <select name="pipe_color" class="form-input">
+                                    <option value="" data-i18n="opt_select_color">Select Color...</option>
+                                    <option value="Blue">Blue</option>
+                                    <option value="White">White</option>
+                                    <option value="Grey">Grey</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="lbl_qty">Quantity *</label>
+                                <input type="text" name="quantity" required class="form-input"
+                                    placeholder="e.g. 100 Pipes">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="lbl_loc">Delivery Location *</label>
+                            <input type="text" name="location" required class="form-input" placeholder="City, State">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="lbl_msg">Additional Message</label>
+                            <textarea name="message" class="form-input" rows="4"
+                                placeholder="Any specific requirements?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" data-i18n="btn_send">Send Order <i
+                                class="fa-solid fa-paper-plane ms-2"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <span class="logo-text text-white">SRI SURIYA</span> <span class="logo-subtext"
+                    style="color:#aaa;">POLYMERS</span>
+            </div>
+            <p class="footer-desc mt-sm" data-i18n="footer_desc">Tamil Nadu's Trusted manufacturer of agricultural and
+                electrical PVC pipes and even more products.</p>
+            <div class="social-links mt-md">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-bottom mt-md">
+                <p data-i18n="footer_copy">&copy; 2026 Sri Suriya Polymers. All Rights Reserved. Designed by Owl
+                    creation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="#" class="back-to-top js-back-top"><i class="fa-solid fa-arrow-up"></i></a>
+    <a href="https://wa.me/919994166671" target="_blank" class="whatsapp-float"><i
+            class="fa-brands fa-whatsapp"></i></a>
+
+    <!-- Custom Popup -->
+    <div id="successPopup" class="success-popup-overlay">
+        <div class="success-popup-card reveal-up">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h2 data-i18n="pop_title">Thanks for Ordering!</h2>
+            <p data-i18n="pop_desc">Your enquiry has been sent to our team. We will get back to you shortly.</p>
+            <button class="btn btn-primary mt-md onclick-close-popup" data-i18n="pop_btn">Great!</button>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+
+    <!-- Chat Bot -->
+    <div class="bot-container js-bot-container">
+        <div class="bot-window js-bot-window">
+            <div class="bot-header">
+                <div class="bot-info">
+                    <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bot-name-wrapper">
+                        <span class="bot-name" data-i18n="bot_name">Surya Assistant</span>
+                        <span class="bot-status" data-i18n="bot_online">Online</span>
+                    </div>
+                </div>
+                <button class="bot-close js-bot-close">&times;</button>
+            </div>
+            <div class="bot-messages js-bot-messages">
+                <div class="message bot-msg">
+                    <p data-i18n="bot_welcome">Hello! How can I help you today regarding Sri Suriya Pipes?</p>
+                </div>
+            </div>
+            <div class="bot-input-area">
+                <input type="text" class="bot-input js-bot-input" placeholder="Type a message..."
+                    data-i18n-attr="placeholder:bot_placeholder">
+                <button class="bot-send js-bot-send"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="bot-trigger js-bot-trigger" title="Chat with us">
+            <i class="fa-solid fa-comments"></i>
+        </button>
+    </div>
+</body>
+
+</html>
