@@ -185,14 +185,19 @@ Additional Message: ${data.message || 'None'}
 --- End of Order ---
             `.trim();
 
+            const now = new Date();
+            const timeStr = now.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
             const templateParams = {
-                from_name: data.name,
+                name: data.name,
                 email: data.email || 'Not provided',
+                title: `New Order – ${data.product_type || 'General Enquiry'}`,
+                time: timeStr,
                 message: orderMessage
             };
 
             try {
-                const response = await emailjs.send('service_kn721ea', 'template_330d74d', templateParams);
+                const response = await emailjs.send('service_qmrcuw7', 'template_z94vkf4', templateParams);
                 console.log('SUCCESS!', response.status, response.text);
                 successPopup.classList.add('active');
                 enquiryForm.reset();
@@ -217,6 +222,31 @@ Additional Message: ${data.message || 'None'}
         });
     }
 
+    // --- Payment Popup Handling ---
+    const paymentBtn = document.getElementById('paymentBtn');
+    const paymentPopup = document.getElementById('paymentPopup');
+    const closePaymentBtn = document.querySelector('.onclick-close-payment');
+
+    if (paymentBtn && paymentPopup) {
+        paymentBtn.addEventListener('click', () => {
+            paymentPopup.classList.add('active');
+        });
+    }
+
+    if (closePaymentBtn) {
+        closePaymentBtn.addEventListener('click', () => {
+            paymentPopup.classList.remove('active');
+        });
+    }
+
+    if (paymentPopup) {
+        paymentPopup.addEventListener('click', (e) => {
+            if (e.target === paymentPopup) {
+                paymentPopup.classList.remove('active');
+            }
+        });
+    }
+
     // --- Language Translation Logic ---
     const translations = {
         en: {
@@ -229,8 +259,8 @@ Additional Message: ${data.message || 'None'}
             nav_applications: "Applications",
             nav_gallery: "Gallery",
             nav_order: "Order",
-            hero_title: "PVC Pipes for <br><span class=\"text-gradient\">Agriculture & Borewell and Electricals ect..</span>",
-            hero_subtitle: "Tamil Nadu's most trusted manufacturer and dealer.Delivering durability,precision, and reliable water distribution systems and even more....",
+            hero_title: "PVC Pipes for <br><span class=\"text-gradient\">Agriculture, Borewell and Electricals etc.</span>",
+            hero_subtitle: "Tamil Nadu's most trusted manufacturer and dealer. Delivering durability, precision, and reliable water distribution systems for every need.",
             btn_explore: "Explore Products",
             btn_quote: "Place a Order",
             feat_durable_title: "Durable Pipes",
@@ -244,9 +274,10 @@ Additional Message: ${data.message || 'None'}
             stat_est: "Established Year",
             stat_prod: "Core PVC Products",
             stat_clients: "Happy Clients",
-            about_title: "Established since <span class=\"text-gradient\">2010</span>",
-            about_p1: "Located in the Sidco Industrial Estate at Kappalur, Madurai,Sri Suriya Polymers is a leading (Sole Proprietorship) firm managed by Sudhakar_K. We are dedicated to producing high-quality PVC solutions for agricultural,industrial, and construction needs Even more products are products.",
-            about_p2: " Our state-of-the-art infrastructure is spread across a vast area, divided into specialized departments: Manufacturing, Quality Testing, Packing, R&D, and Logistics . The organized structure ensures that every product, from high quality pvc pipes for Agriculture, Borewell, Electricals , constructions even more.. with more solutions, meets the highest industry standards.",
+            stat_quality: "Quality Assured",
+            about_title: "Established since <span class=\"text-gradient\">2000</span>",
+            about_p1: "Located in the SIDCO Industrial Estate at Kappalur, Madurai, Sri Suriya Polymers is a leading manufacturing firm managed by K. Sudhakar. We are dedicated to producing high-quality PVC solutions for agricultural, industrial, and construction needs.",
+            about_p2: "Our state-of-the-art infrastructure is spread across a vast area, divided into specialized departments: Manufacturing, Quality Testing, Packing, R&D, and Logistics. This organized structure ensures that every product, from high-quality PVC pipes to custom fittings, meets the highest industry standards.",
             about_l1: "<i class=\"fa-solid fa-check-circle\"></i> ISO Certified Manufacturing",
             about_l2: "<i class=\"fa-solid fa-check-circle\"></i> Advanced Quality Testing Lab",
             about_l3: "<i class=\"fa-solid fa-check-circle\"></i> Modern R&D Department",
@@ -254,8 +285,10 @@ Additional Message: ${data.message || 'None'}
             btn_contact: "Contact Us",
             prod_title: "Our <span class=\"text-gradient\">Products</span>",
             prod_subtitle: "Comprehensive PVC solutions for every requirement.",
-            prod1_title: "High Pressure & Agri Pipes",
-            prod1_desc: "Specialized PVC pipes for high-pressure irrigation and agricultural water supply. Available in Blue, White, and Grey.",
+            prod1_title: "High Pressure Pipes",
+            prod1_desc: "Durable high-pressure PVC pipes designed for efficient water flow and industrial applications. Available in multiple sizes and colors.",
+            prod1a_title: "Agriculture Pipes",
+            prod1a_desc: "Reliable agricultural PVC pipes suitable for irrigation, farming, and water distribution systems with long-lasting performance.",
             prod2_title: "Electric & Wiring Pipes",
             prod2_desc: "Fire-retardant electrical conduit pipes for safe wiring in commercial and residential buildings.",
             prod3_title: "Pvc Fittings",
@@ -294,6 +327,12 @@ Additional Message: ${data.message || 'None'}
             lbl_email: "Email Address",
             lbl_prod: "Product Type *",
             opt_select_prod: "Select Product...",
+            opt_agri: "Agricultural PVC Pipes",
+            opt_construction: "Construction PVC Pipes",
+            opt_high_pressure: "High Pressure PVC Pipes",
+            opt_upvc: "UPVC Pipes",
+            opt_electrical: "Electrical Pipes",
+            opt_water_tanks: "Water Tanks",
             lbl_size: "Pipe Size",
             opt_select_size: "Select Size...",
             lbl_color: "Pipe Color",
@@ -303,12 +342,17 @@ Additional Message: ${data.message || 'None'}
             lbl_msg: "Additional Message",
             btn_send: "Send Order <i class=\"fa-solid fa-paper-plane ms-2\"></i>",
             footer_desc: "Tamil Nadu's Trusted manufacturer of agricultural and electrical PVC pipes and even more products.",
-            footer_copy: "&copy; 2026 Sri Suriya Polymers. All Rights Reserved. Designed by Antigravity.",
+            footer_copy: "&copy; 2026 Sri Suriya Polymers. All Rights Reserved. Designed by RAHONAM Creations.",
             pop_title: "Thanks for Ordering!",
             pop_desc: "Your enquiry has been sent to our team. We will get back to you shortly.",
             pop_btn: "Great!",
+            pay_note: "Already ordered? Pay here:",
+            btn_payment: "Show Payment QR",
+            pay_title: "Scan to Pay",
+            pay_desc: "Scan this QR code using any UPI app (GPay, PhonePe, etc.) to make the payment.",
+            pay_btn: "Close",
             // Bot Strings
-            bot_name: "Surya Assistant",
+            bot_name: "Suriya Assistant",
             bot_online: "Online",
             bot_welcome: "Hello! How can I help you today regarding Sri Suriya Pipes?",
             bot_placeholder: "Type a message...",
@@ -316,7 +360,7 @@ Additional Message: ${data.message || 'None'}
             bot_prod_ans: "We offer High Pressure Agri Pipes, Electrical Conduit Pipes, Construction PVC, Plastic Barrels, and even more products.",
             bot_loc_ans: "We are located at SIDCO Industrial Estate, D-42, Kappalur, Madurai, Tamil Nadu - 625008.",
             bot_contact_ans: "You can reach us at +91 99941 66671 or 0452 2489895.",
-            bot_owner_ans: "Sri Surya Polymers is owned and managed by Mr. K. Sudhakar.",
+            bot_owner_ans: "Sri Suriya Polymers is owned and managed by Mr. K. Sudhakar.",
             bot_est_ans: "We have been serving our customers since 2000."
         },
         ta: {
@@ -343,9 +387,10 @@ Additional Message: ${data.message || 'None'}
             stat_est: "நிறுவப்பட்ட ஆண்டு",
             stat_prod: "முக்கிய பிவிசி தயாரிப்புகள்",
             stat_clients: "மகிழ்ச்சியான வாடிக்கையாளர்கள்",
-            about_title: "<span class=\"text-gradient\">2010</span> முதல் நிறுவப்பட்டது",
-            about_p1: "மதுரை கப்பலூர் சிட்கோ தொழிற்பேட்டையில் அமைந்துள்ள ஸ்ரீ சூர்யா பாலிமர்ஸ், சுதாகர்_கே என்பவரால் நிர்வகிக்கப்படும் ஒரு முன்னணி (தனி உரிமையாளர்) நிறுவனம் ஆகும். விவசாயம், தொழில் மற்றும் கட்டுமானத் தேவைகளுக்கான உயர்தர பிவிசி தீர்வுகளை உருவாக்க நாங்கள் அர்ப்பணித்துள்ளோம்.",
-            about_p2: " எங்கள் நவீன உள்கட்டமைப்பு ஒரு பரந்த பகுதியில் பரவியுள்ளது, உற்பத்தியாளர், தர சோதனை, பேக்கிங், ஆர்&டி மற்றும் லாஜிஸ்டிக்ஸ் என பிரிக்கப்பட்டுள்ளது. இந்த ஒழுங்கமைக்கப்பட்ட அமைப்பு, விவசாயம், போர்வெல், மின்சாரம், கட்டுமானம் போன்ற அனைத்து தயாரிப்புகளும் மிக உயர்ந்த தரத்துடன் இருப்பதை உறுதி செய்கிறது.",
+            stat_quality: "தரம் உறுதி செய்யப்பட்டது",
+            about_title: "<span class=\"text-gradient\">2000</span> முதல் நிறுவப்பட்டது",
+            about_p1: "மதுரை கப்பலூர் சிட்கோ தொழிற்பேட்டையில் அமைந்துள்ள ஸ்ரீ சூர்யா பாலிமர்ஸ், கோவில்பிச்சை சுதாகர் என்பவரால் நிர்வகிக்கப்படும் ஒரு முன்னணி நிறுவனம் ஆகும். விவசாயம், தொழில் மற்றும் கட்டுமானத் தேவைகளுக்கான உயர்தர பிவிசி தீர்வுகளை உருவாக்க நாங்கள் அர்ப்பணித்துள்ளோம்.",
+            about_p2: "எங்கள் நவீன உள்கட்டமைப்பு ஒரு பரந்த பகுதியில் பரவியுள்ளது, உற்பத்தியாளர், தர சோதனை, பேக்கிங், ஆர்&டி மற்றும் லாஜிஸ்டிக்ஸ் என பிரிக்கப்பட்டுள்ளது. இந்த ஒழுங்கமைக்கப்பட்ட அமைப்பு, விவசாயம், போர்வெல், மின்சாரம், கட்டுமானம் போன்ற அனைத்து தயாரிப்புகளும் மிக உயர்ந்த தரத்துடன் இருப்பதை உறுதி செய்கிறது.",
             about_l1: "<i class=\"fa-solid fa-check-circle\"></i> ISO சான்றளிக்கப்பட்ட உற்பத்தி",
             about_l2: "<i class=\"fa-solid fa-check-circle\"></i> மேம்பட்ட தர சோதனை ஆய்வகம்",
             about_l3: "<i class=\"fa-solid fa-check-circle\"></i> நவீன ஆர்&டி துறை",
@@ -353,8 +398,10 @@ Additional Message: ${data.message || 'None'}
             btn_contact: "எங்களைத் தொடர்பு கொள்ளவும்",
             prod_title: "எங்கள் <span class=\"text-gradient\">தயாரிப்புகள்</span>",
             prod_subtitle: "ஒவ்வொரு தேவைக்கும் விரிவான பிவிசி தீர்வுகள்.",
-            prod1_title: "உயர் அழுத்தம் மற்றும் விவசாய குழாய்கள்",
-            prod1_desc: "உயர் அழுத்த பாசனம் மற்றும் விவசாய நீர் வழங்கலுக்கான சிறப்பு பிவிசி குழாய்கள். நீலம், வெள்ளை மற்றும் சாம்பல் நிறங்களில் கிடைக்கிறது.",
+            prod1_title: "உயர் அழுத்த குழாய்கள்",
+            prod1_desc: "திறமையான நீர் ஓட்டம் மற்றும் தொழில்துறை பயன்பாடுகளுக்காக வடிவமைக்கப்பட்ட நீடித்த உயர் அழுத்த பிவிசி குழாய்கள். பல அளவுகள் மற்றும் வண்ணங்களில் கிடைக்கிறது.",
+            prod1a_title: "விவசாய குழாய்கள்",
+            prod1a_desc: "பாசனம், விவசாயம் மற்றும் நீர் விநியோக அமைப்புகளுக்கு ஏற்ற நம்பகமான விவசாய பிவிசி குழாய்கள்.",
             prod2_title: "மின்சார மற்றும் வயரிங் குழாய்கள்",
             prod2_desc: "வணிக மற்றும் குடியிருப்பு கட்டிடங்களில் பாதுகாப்பான வயரிங்கிற்கான தீ தடுப்பு மின்சார வழித்தட குழாய்கள்.",
             prod3_title: "பிவிசி ஃபிட்டிங்க்ஸ்",
@@ -371,6 +418,7 @@ Additional Message: ${data.message || 'None'}
             grp_plumbing: "பிளம்பிங் மற்றும் வீட்டு நீர் இணைப்பு",
             grp_elec: "மின்சார மற்றும் வழித்தட அமைப்புகள்",
             grp_agri: "விவசாயம் மற்றும் உயர் அழுத்தம்",
+            grp_borewell: "போர்வெல் பயன்பாடுகள்",
             grp_ind: "பெரிய தொழில்துறை மற்றும் சிறப்பு",
             app_title: "முக்கிய <span class=\"text-gradient\">பயன்பாடுகள்</span>",
             app1: "விவசாய பாசனம்",
@@ -392,6 +440,12 @@ Additional Message: ${data.message || 'None'}
             lbl_email: "மின்னஞ்சல் முகவரி",
             lbl_prod: "தயாரிப்பு வகை *",
             opt_select_prod: "தயாரிப்பைத் தேர்ந்தெடுக்கவும்...",
+            opt_agri: "விவசாய பிவிசி குழாய்கள்",
+            opt_construction: "கட்டுமான பிவிசி குழாய்கள்",
+            opt_high_pressure: "உயர் அழுத்த பிவிசி குழாய்கள்",
+            opt_upvc: "யுபிவிசி குழாய்கள்",
+            opt_electrical: "மின்சார குழாய்கள்",
+            opt_water_tanks: "தண்ணீர் தொட்டிகள்",
             lbl_size: "குழாய் அளவு",
             opt_select_size: "அளவைத் தேர்ந்தெடுக்கவும்...",
             lbl_color: "குழாய் நிறம்",
@@ -405,6 +459,11 @@ Additional Message: ${data.message || 'None'}
             pop_title: "ஆர்டர் செய்ததற்கு நன்றி!",
             pop_desc: "உங்கள் விசாரணை எங்கள் குழுவிற்கு அனுப்பப்பட்டுள்ளது. நாங்கள் விரைவில் உங்களைத் தொடர்பு கொள்வோம்.",
             pop_btn: "அற்புதம்!",
+            pay_note: "ஏற்கனவே ஆர்டர் செய்தீர்களா? இங்கே பணம் செலுத்துங்கள்:",
+            btn_payment: "பணம் செலுத்தும் QR குறியீட்டைக் காட்டு",
+            pay_title: "ஸ்கேன் செய்து பணம் செலுத்துங்கள்",
+            pay_desc: "பணம் செலுத்த ஏதேனும் ஒரு UPI செயலியை (GPay, PhonePe போன்றவை) பயன்படுத்தி இந்த QR குறியீட்டை ஸ்கேன் செய்யவும்.",
+            pay_btn: "மூடுக",
             // Bot Strings
             bot_name: "சூர்யா உதவியாளர்",
             bot_online: "ஆன்லைனில்",
@@ -415,7 +474,7 @@ Additional Message: ${data.message || 'None'}
             bot_loc_ans: "நாங்கள் மதுரை, கப்பலூர், டி-42, சிட்கோ தொழிற்பேட்டையில் அமைந்துள்ளோம்.",
             bot_contact_ans: "நீங்கள் எங்களை +91 99941 66671 அல்லது +91 98765 43211 எண்ணில் தொடர்பு கொள்ளலாம்.",
             bot_owner_ans: "ஸ்ரீ சூர்யா பாலிமர்ஸ் திரு. கோவில்பிச்சை சுதாகர் அவர்களால் நிர்வகிக்கப்படுகிறது.",
-            bot_est_ans: "நாங்கள் 2010 முதல் எங்கள் வாடிக்கையாளர்களுக்கு சேவை செய்து வருகிறோம்."
+            bot_est_ans: "நாங்கள் 2000 முதல் எங்கள் வாடிக்கையாளர்களுக்கு சேவை செய்து வருகிறோம்."
         }
     };
 
@@ -534,4 +593,35 @@ Additional Message: ${data.message || 'None'}
         const nextLang = currentLang === 'en' ? 'ta' : 'en';
         setLanguage(nextLang);
     });
+
+    // --- Dynamic Pipe Size Dropdown ---
+    const productTypeSelect = document.getElementById('productType');
+    const pipeSizeSelect = document.getElementById('pipeSize');
+
+    const productSizes = {
+        "Agri_Pipes": ["1/2 inch", "3/4 inch", "1 inch", "1 1/4 inch", "1 1/2 inch", "2 inch", "2 1/2 inch", "3 inch", "4 inch", "5 inch", "6 inch", "7 inch", "8 inch", "10 inch", "12 inch"],
+        "Construction": ["1/2 inch", "3/4 inch", "1 inch", "1 1/4 inch", "1 1/2 inch", "2 inch", "2 1/2 inch", "3 inch", "4 inch", "5 inch", "6 inch", "7 inch", "8 inch", "10 inch", "12 inch"],
+        "HighPressure": ["1/2 inch", "3/4 inch", "1 inch", "1 1/4 inch", "1 1/2 inch", "2 inch", "2 1/2 inch", "3 inch", "4 inch"],
+        "UPVC": ["1/2 inch", "3/4 inch", "1 inch"],
+        "Electrical_Pipes": ["1/2 inch", "3/4 inch", "1 inch"],
+        "WaterTanks": ["500 Liters", "750 Liters", "1000 Liters", "2000 Liters"]
+    };
+
+    if (productTypeSelect && pipeSizeSelect) {
+        productTypeSelect.addEventListener('change', function () {
+            const selectedProduct = this.value;
+
+            // Clear existing options except placeholder
+            pipeSizeSelect.innerHTML = `<option value="" data-i18n="opt_select_size">${translations[currentLang].opt_select_size}</option>`;
+
+            if (selectedProduct && productSizes[selectedProduct]) {
+                productSizes[selectedProduct].forEach(size => {
+                    const option = document.createElement('option');
+                    option.value = size;
+                    option.textContent = size;
+                    pipeSizeSelect.appendChild(option);
+                });
+            }
+        });
+    }
 });
